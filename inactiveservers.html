@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InactiveCxV - Servers</title>
+    <link rel="stylesheet" href="inactivewebb.css">
+     <!-- Favicon -->
+     <link rel="icon" href="custom1.png" type="image/png">
+
+     <link rel="stylesheet" href="inacitvewebb.css">
+     
+    <style>
+        body {
+            background-color: black;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;
+        }
+
+        /* Server Cards Container */
+        .server-cards-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+            flex-grow: 1;
+            justify-items: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Server Card Styling */
+        .server-card {
+            background-color: #111;
+            border: 3px solid #00bcd4;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 115, 230, 0.8), 0 0 25px rgba(0, 115, 230, 0.6);
+            padding: 20px;
+            transition: all 0.3s ease;
+            width: 250px;
+        }
+
+        .server-card:hover {
+            box-shadow: 0 0 30px rgba(0, 115, 230, 0.8), 0 0 40px rgba(0, 115, 230, 0.6);
+        }
+
+        .server-card h3 {
+            color: #00bcd4;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .server-card p {
+            color: #ccc;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        .server-card a {
+            color: #ff4081;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .server-card a:hover {
+            color: #00bcd4;
+        }
+
+        /* Back Button Styling */
+        .back-button {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #00bcd4;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 115, 230, 0.8);
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #ff4081;
+            box-shadow: 0 0 15px rgba(0, 115, 230, 0.8);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Music (autoplay and loop) -->
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="Beat fs.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Server Cards Section -->
+    <div class="server-cards-container">
+        <!-- Server 1: COM -->
+        <div class="server-card">
+            <h3>COM</h3>
+            <p>Explore the COM server for exclusive discussions and more.</p>
+            <a href="https://discord.gg/Gyga9kUV">Join COM</a>
+        </div>
+
+        <!-- Server 2: CvX -->
+        <div class="server-card">
+            <h3>CvX</h3>
+            <p>Join CvX for community-based activities and events.</p>
+            <a href="https://discord.gg/zXSub6y4JS">Join CvX</a>
+        </div>
+
+        <!-- Server 3: Tele CvX -->
+        <div class="server-card">
+            <h3>Tele CvX</h3>
+            <p>Stay connected with the CvX Telegram community.</p>
+            <a href="https://t.me/+sTkkZYN_tloyM2Q5">Join Tele CvX</a>
+        </div>
+
+        <!-- Server 4: Tele Coffin -->
+        <div class="server-card">
+            <h3>Tele Coffin</h3>
+            <p>Join the Coffin Telegram server for exclusive content.</p>
+            <a href="https://t.me/+GX7etSHemflhOGQ5">Join Tele Coffin</a>
+        </div>
+
+        <!-- Server 5: Coffin -->
+        <div class="server-card">
+            <h3>Coffin</h3>
+            <p>Explore the Coffin server for hacking-related discussions.</p>
+            <a href="https://discord.gg/vzy2p2qMbj">Join Coffin</a>
+        </div>
+
+        <!-- Server 6: Rules for Each Server -->
+        <div class="server-card">
+            <h3>Rules for Each Server</h3>
+            <p>Read and understand the rules for each server before joining.</p>
+            <a href="rules.html">View Rules</a>
+        </div>
+    </div>
+
+    <!-- Back Button -->
+    <div class="back-button">
+        <a href="inactivemain.html" class="back-btn">Back to Homepage</a>
+    </div>
+
+</body>
+</html>
+
+

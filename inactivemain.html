@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InactiveCxV</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="custom1.png" type="image/png">
+
+    <link rel="stylesheet" href="inacitvewebb.css">
+    <style>
+        /* Custom Cursor */
+        body {
+            cursor: url('custom1.png'), auto;
+        }
+    </style>
+    
+    <style>
+        /* Fullscreen overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000; /* Make sure it’s above everything else */
+            backdrop-filter: blur(30px); /* Stronger blur background */
+            transition: transform 0.6s ease, opacity 0.6s ease; /* Transition for smooth zoom */
+            opacity: 1;
+        }
+
+        /* Centered button */
+        .overlay button {
+            font-size: 24px;
+            background-color: black;
+            color: whitesmoke;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            font-family: 'Arial', sans-serif;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+
+        .overlay.zoomed {
+            transform: scale(1.2); /* Scale up the overlay and button for zoom effect */
+            opacity: 0; /* Fade out overlay */
+        }
+
+        /* Glowing Border and Shop Section */
+        .shop-section, .socials-section, .servers-section {
+            margin: 20px;
+            padding: 20px;
+            border: 3px solid #00bcd4; /* Blue glowing border */
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 115, 230, 0.8), 0 0 25px rgba(0, 115, 230, 0.6);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .shop-section:hover, .socials-section:hover, .servers-section:hover {
+            box-shadow: 0 0 30px rgba(0, 115, 230, 0.8), 0 0 40px rgba(0, 115, 230, 0.6); /* Glowing effect on hover */
+        }
+
+        .shop-section a, .socials-section a, .servers-section a {
+            font-size: 24px;
+            color: #00bcd4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .shop-section a:hover, .socials-section a:hover, .servers-section a:hover {
+            color: #ff4081;
+        }
+
+        /* Socials Section Content */
+        .socials-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .socials-section li {
+            margin: 10px 0;
+        }
+
+        .socials-section .label {
+            color: #bbb;
+            font-weight: bold;
+        }
+
+        .socials-section a {
+            color: #00bcd4;
+            text-decoration: none;
+        }
+
+        .socials-section a:hover {
+            color: #ff4081;
+        }
+
+        /* Content after overlay is removed */
+        .content {
+            display: none;
+        }
+    </style>
+</head>
+<body style="background-color: black;">
+
+    <div id="overlay" class="overlay">
+        <button onclick="removeOverlayAndPlayMusic()">inactive.CvX</button>
+        <audio id="backgroundMusic" src="Beat fs.mp3" preload="auto"></audio>
+    </div>
+
+    <div class="shop-section">
+        <h2>Welcome to the Shop</h2>
+        <p>Click below to explore exclusive items and more!</p>
+        <a href="inactiveshop.html" target="_self" onclick="stopMusic()">Go to the Shop</a>
+    </div>
+
+    <br>
+    <div class="socials-section">
+        <h2>Socials</h2>
+        <ul>
+            <li><span class="label">Telegram:</span> <a href="https://t.me/inactivee0" target="_blank">@inacitvee0</a></li>
+            <li><span class="label">Instagram:</span> <a href="https://www.instagram.com/nzx_t_t/profilecard/?igsh=MW1oZ3B3bWE5aTQyaQ==" target="_blank">nzx_t_t</a></li>
+            <li><span class="label">YouTube:</span> <a href="https://www.youtube.com/@byiox" target="_blank">@Byiox</a></li>
+            <li><span class="label">Discord:</span> <a href="https://discord.com/channels/@me" target="_blank">inacitve_ee2.0</a></li>
+            <li><span class="label">Doxbin:</span> <a href="https://doxbin.net/user/inactivee" target="_blank">inactivee</a></li>
+            <li><span class="label">Phone:</span> +1 (559)-522-2064</li>
+            <li><span class="label">Email:</span> <a href="mailto:inacitve@viv2.com">inacitve@viv2.com</a></li>
+        </ul>
+    </div>
+
+    <br> 
+    <div class="servers-section">
+        <h2>Servers</h2>
+        <p>Click below to explore my servers!</p>
+        <a href="inactiveservers.html" target="_self" onclick="stopMusic()">Go to the Servers</a>
+    </div>
+
+    <script>
+        function removeOverlayAndPlayMusic() {
+            // Apply the zoom effect by adding a class
+            const overlay = document.getElementById("overlay");
+            overlay.classList.add("zoomed");
+
+            // Wait for animation to end before removing the overlay
+            setTimeout(() => {
+                overlay.style.display = "none";
+                // Display content after overlay is removed
+                const content = document.getElementById("content");
+                if(content){
+                    content.style.display = "block";
+                }
+
+                // Play music and loop it
+                const music = document.getElementById("backgroundMusic");
+                music.loop = true; // Set loop property
+                music.play().catch((error) => {
+                    console.log("Audio play was blocked by the browser", error);
+                });
+            }, 600); // Matches transition duration in CSS
+        }
+
+        function stopMusic() {
+            const music = document.getElementById("backgroundMusic");
+            music.pause();
+            music.currentTime = 0; // Reset the audio
+        }
+    </script>
+</body>
+</html>

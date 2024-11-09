@@ -1,0 +1,1 @@
+console.log(onclick(window.location.href="inactiveweb.html"))

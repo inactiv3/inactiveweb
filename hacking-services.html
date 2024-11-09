@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InactiveCxV - Hacking Services</title>
+    <link rel="stylesheet" href="inactivewebb.css">
+     <!-- Favicon -->
+     <link rel="icon" href="custom1.png" type="image/png">
+
+     <link rel="stylesheet" href="inacitvewebb.css">
+    <style>
+        body {
+            background-color: black;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh;
+        }
+
+        .shop-container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .shop-header h1 {
+            font-size: 36px;
+            color: #00bcd4;
+            text-shadow: 0 0 15px rgba(0, 115, 230, 0.8);
+        }
+
+        .price-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .price-item {
+            background-color: #111;
+            border: 3px solid #00bcd4;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 115, 230, 0.8), 0 0 25px rgba(0, 115, 230, 0.6);
+            padding: 20px;
+            text-align: center;
+            width: 200px;
+            color: white;
+        }
+
+        .price-item h2 {
+            color: #00bcd4;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .price-item p {
+            font-size: 14px;
+            color: #ff4081;
+            margin-top: 10px;
+        }
+
+        .price-item a {
+            color: #ff4081;
+            font-size: 18px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .price-item a:hover {
+            color: #00bcd4;
+        }
+
+        /* Popup Styling */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+        }
+
+        .popup-button {
+            background-color: #00bcd4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        .popup-button:hover {
+            background-color: #ff4081;
+        }
+
+        /* Back Button Styling */
+        .back-button {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #00bcd4;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 115, 230, 0.8);
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #ff4081;
+            box-shadow: 0 0 15px rgba(0, 115, 230, 0.8);
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="Beat fs.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="shop-container">
+        <div class="shop-header">
+            <h1>Hacking Services</h1>
+            <p>Choose the hacking service that you need. Please note, services may take time to complete.</p>
+        </div>
+
+        <!-- Price List -->
+        <div class="price-list">
+            <div class="price-item">
+                <h2>Doxing</h2>
+                <p>Price: $40</p>
+                <a href="javascript:void(0);" onclick="showPopup()">Buy Now</a>
+            </div>
+            <div class="price-item">
+                <h2>SWAT</h2>
+                <p>Price: $30 (Must have addy already)</p>
+                <a href="javascript:void(0);" onclick="showPopup()">Buy Now</a>
+            </div>
+            <div class="price-item">
+                <h2>SSN Pull</h2>
+                <p>Price: $300</p>
+                <a href="javascript:void(0);" onclick="showPopup()">Buy Now</a>
+            </div>
+            <div class="price-item">
+                <h2>Information Grab</h2>
+                <p>Price: $120</p>
+                <a href="javascript:void(0);" onclick="showPopup()">Buy Now</a>
+            </div>
+            <div class="price-item">
+                <h2>Everything</h2>
+                <p>Price: $1000</p>
+                <p>Includes all of the above services.</p>
+                <a href="javascript:void(0);" onclick="showPopup()">Buy Now</a>
+            </div>
+        </div>
+
+        <p style="margin-top: 20px; color: #ff4081; font-size: 16px;">
+          Please know that you must have some info atleast what account they use It takes time to gather the information for these services. If you do buy, please be patient and don't be pushy, or I will refund and block you.
+        </p>
+    </div>
+
+    <!-- Popup Confirmation for Purchase -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <h2>Are you sure you want to buy this service?</h2>
+            <button class="popup-button" onclick="confirmPurchase()">Yes</button>
+            <button class="popup-button" onclick="closePopup()">No</button>
+        </div>
+    </div>
+
+    <!-- Back Button -->
+    <div class="back-button">
+        <a href="inactiveshop.html" class="back-btn">Back to Shop</a>
+    </div>
+
+    <script>
+        function showPopup() {
+            document.getElementById("popup").style.display = "flex";
+        }
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+
+        function confirmPurchase() {
+            window.location.href = "https://discord.gg/7NQQRB9vA5";
+        }
+    </script>
+</body>
+</html>
